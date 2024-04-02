@@ -1,0 +1,26 @@
+import Link from "next/link"
+import { Container } from "./ui/container"
+import { MainNav } from "./main-nav"
+import getCategories from "@/actions/get-categories"
+import { NavbarActions } from "./navbar-action";
+
+export const revalidate=0;
+
+export const Navbar=async ()=>{
+    const categories=await getCategories();
+    return(
+        <div className="border-b">
+            <Container>
+                <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
+                <Link href="/" className="flex lg:ml-0 gap-x-2 ml-4">
+                    <p className="font-bold text-xl">Store</p>
+                </Link>
+                <MainNav data={categories}/>
+                <NavbarActions/>
+                </div>
+                
+            </Container>
+            
+        </div>
+    )
+}
