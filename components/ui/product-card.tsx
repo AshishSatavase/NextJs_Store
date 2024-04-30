@@ -33,7 +33,7 @@ export const ProductCard:React.FC<ProductCardProps>=({data})=>{
         cart.addItem(data);
     }
     return(
-        <div onClick={handleClick} className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4">
+        <div onClick={handleClick} className="bg-zinc-50 group cursor-pointer rounded-xl h-[450px] border p-3 space-y-4">
             {/* Images and actions */}
             <div className="aspect-square rounded-xl bg-gray-100 relative">
                 <Image
